@@ -87,8 +87,7 @@
   </footer>
 </main>
 <script>
-// Brevo は通常の送信だと {"success":true} を返すだけでページを移動しない。
-// ページ内で送り、成功したら送信直後のページへ移る（Brevo のスクリプトは読み込まない）。
+// Brevo へページ内で送り、成功したら送信直後のページへ移る（Brevo のスクリプトは読み込まない）。
 (function () {
   var form = document.querySelector(".signup-form");
   if (!form || !window.fetch) return;
@@ -101,14 +100,12 @@
     button.disabled = true;
     status.textContent = MSG.sending;
     status.className = "form-status";
+    // ブラウザから送ると、Brevo は成功時に JSON ではなく英語の確認ページ（HTML・200）を返す。
+    // 失敗時は 400 と JSON。なので本文は読まず、HTTP の状態だけで判定する（2026-10-04 実測）
     fetch(form.action, { method: "POST", body: new FormData(form) })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data && data.success) {
-          window.location.href = "verifie.html";
-        } else {
-          throw new Error("rejected");
-        }
+      .then(function (r) {
+        if (!r.ok) throw new Error("rejected");
+        window.location.href = "verifie.html";
       })
       .catch(function () {
         status.textContent = MSG.error;
