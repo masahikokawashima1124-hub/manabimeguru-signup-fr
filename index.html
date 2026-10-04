@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recevoir l'appli gratuitement | Camille</title>
+<meta name="description" content="Inscris ton adresse e-mail et reçois gratuitement l'appli d'apprentissage pour l'école primaire, dès qu'elle est prête.">
+<link rel="preload" href="fonts/mplusrounded1c-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Instagram から「メール登録の特典＝アプリ」を知って来た人向け。
+     説得はしない：フォームを最初に置き、その下にアプリのベネフィットだけを並べる（2026-10-01 ユーザー決定）。
+     フランス語版アプリは未公開なので「できあがり次第」と書く。
+     カードはフランス語版が未制作のため、ドイツ語版の絵の部分だけを切り出して見せる（.art） -->
+<header class="sky">
+  <div class="wrap">
+    <p class="eyebrow">Camille · Devoirs sans s'épuiser</p>
+    <h1>Recevoir l'appli gratuitement</h1>
+    <div class="form-card" id="inscription">
+      <img class="peek" src="img/hanabi-happy.webp" alt="" width="78" height="89">
+      <p class="lead">Inscris ton adresse e-mail. Tu reçois le lien de l'appli par e-mail, en avant-première, dès qu'elle est prête.</p>
+      <!-- Brevo のフォームを貼らず、自前の入力欄から Brevo へ直接送る（外部の読み込みなし）。
+           送信先・欄の名前は Brevo の埋め込みコードから取った（signup/README.md）。
+           送信後の画面は Brevo のフォーム設定の「Confirmation page」で verifie.html を指定する -->
+      <form class="signup-form" method="POST" action="https://441955ff.sibforms.com/serve/MUIFAI0M5WWUnM8m-VTGiJx-AZOnYdNQplbtgjw1uJx0th8XmP7qS4Yw0V0LeKDmmgUXhxfnTAuCKg8Oh2Z9efkgg2wSSptQGN5d63vdxLlM3fbO3nc_F-lsr5OT0fAPxwIQ0wwpFS7p7dXhWaAysooa9oBuoIhtZwy5DviN5A-d1Ko4WbaYFUIHy-nVWlvHsqz-odPrJASkO_A6XQ==">
+        <label class="field-label" for="EMAIL">Ton adresse e-mail</label>
+        <input class="field" type="email" id="EMAIL" name="EMAIL" autocomplete="email" inputmode="email"
+               placeholder="prenom@exemple.fr" required>
+        <label class="consent" for="OPT_IN">
+          <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required>
+          <span>Oui, je souhaite recevoir les e-mails de Camille (Comagoto). Je peux me désinscrire à tout moment
+          via le lien en bas de chaque e-mail.</span>
+        </label>
+        <button class="submit" type="submit">Recevoir l'accès en avant‑première</button>
+        <input class="trap" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <input type="hidden" name="locale" value="fr">
+      </form>
+      <p class="small">Tu reçois d'abord un e-mail de confirmation. Plus d'infos dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="benefits-section">
+    <h2>Ce que l'appli fait à ta place</h2>
+    <ul class="benefits">
+      <li>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span>
+        <p><strong>Plus besoin d'être assise à côté.</strong>Chaque exercice a un indice et une explication.</p>
+      </li>
+      <li>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 3v5h5M4 13a8 8 0 0 0 14.3 4.9L20 16M20 21v-5h-5"/></svg></span>
+        <p><strong>Plus besoin de retenir les erreurs.</strong>Les exercices ratés reviennent tout seuls après 1, 3, 7 et 20 jours.</p>
+      </li>
+      <li>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.4 6.8 19.2l1-5.9L3.5 9.2l5.9-.8z"/></svg></span>
+        <p><strong>Plus besoin de pousser.</strong>Les bonnes réponses rapportent des points et des cartes à collectionner – impossible de les acheter.</p>
+      </li>
+      <li>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></span>
+        <p><strong>Assez court pour chaque soir.</strong>Une partie, c'est 10 exercices.</p>
+      </li>
+    </ul>
+
+    <figure class="cards">
+      <div class="fan">
+        <div class="art art-r1" role="img" aria-label="Esprit du feu d'artifice, rouge"></div>
+        <div class="art art-n1" role="img" aria-label="Petit esprit des étincelles, bleu nuit"></div>
+        <div class="art art-r6" role="img" aria-label="Esprit luciole, vert"></div>
+      </div>
+      <figcaption>Des esprits à collectionner dans l'appli</figcaption>
+    </figure>
+
+    <ul class="facts">
+      <li>Maths et anglais</li>
+      <li>École primaire</li>
+      <li>Pas de publicité</li>
+      <li>Dans le navigateur, sans installation</li>
+    </ul>
+  </section>
+
+  <footer>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+  </footer>
+</main>
+<script>
+// Brevo は通常の送信だと {"success":true} を返すだけでページを移動しない。
+// ページ内で送り、成功したら送信直後のページへ移る（Brevo のスクリプトは読み込まない）。
+(function () {
+  var form = document.querySelector(".signup-form");
+  if (!form || !window.fetch) return;
+  var button = form.querySelector(".submit");
+  var status = document.getElementById("form-status");
+  var MSG = { sending: "Envoi en cours…", error: "Ça n’a pas marché. Vérifie ton adresse e-mail et réessaie." };
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    button.disabled = true;
+    status.textContent = MSG.sending;
+    status.className = "form-status";
+    fetch(form.action, { method: "POST", body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data && data.success) {
+          window.location.href = "verifie.html";
+        } else {
+          throw new Error("rejected");
+        }
+      })
+      .catch(function () {
+        status.textContent = MSG.error;
+        status.className = "form-status form-status--error";
+        button.disabled = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>
